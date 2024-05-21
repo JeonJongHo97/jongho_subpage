@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="box">
+
+        <img src="img/test_1.jpg" alt="Italian Trulli" id="cimg" class="w1">
+
+
+        <div class="name">
+
+            <div class="box_1">
+                <h3>베네벤토 와이드 천연 가죽 소파</h3>
+                <span>2,540,000원</span>
+                <P>1,521,000원</P>
+            </div>
+
+            <div class="post">
+                <p>배송비 <span>1개 주문시 50,000원</span></p>
+
+            </div>
+            <div class="product_color">
+                <p>색상</p>
+            </div>
+            <div class="size">
+                <p>사이즈</p>
+            </div>
+        </div>
+
+        <div id="product">
+
+            <ul>
+                <li><img src="img/test_1.jpg" alt="Italian Trulli"></li>
+                <li><img src="img/test_2.jpg" alt="Girl in a jacket"></li>
+                <li><img src="img/test_3.jpg" alt="Flowers in Chania"></li>
+                <li><img src="img/test_4.jpg" alt="Flowers in Chania"></li>
+                <li><img src="img/test_5.jpg" alt="Flowers in Chania"></li>
+            </ul>
+
+        </div>
+
+        <div class="container">
+
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">상세보기</li>
+                <li class="tab-link" data-tab="tab-2">배송안내</li>
+                <li class="tab-link" data-tab="tab-3">유의사항</li>
+            </ul>
+
+            <div id="tab-1" class="tab-content current">상세보기 이미지 & 텍스트</div>
+            <div id="tab-2" class="tab-content">배송안내 관련 텍스트</div>
+            <div id="tab-3" class="tab-content">유의사항</div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#product li:first-child").mouseover(function () {
+                $("#cimg").attr("src", "img/test_1.jpg");
+            });
+
+            $("#product li:nth-child(2)").mouseover(function () {
+                $("#cimg").attr("src", "img/test_2.jpg");
+            });
+
+            $("#product li:nth-child(3)").mouseover(function () {
+                $("#cimg").attr("src", "img/test_3.jpg");
+            });
+
+            $("#product li:nth-child(4)").mouseover(function () {
+                $("#cimg").attr("src", "img/test_4.jpg");
+            });
+
+            $("#product li:nth-child(5)").mouseover(function () {
+                $("#cimg").attr("src", "img/test_5.jpg");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('ul.tabs li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>
